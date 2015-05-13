@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA421B02F5A5006F1650 /* AppDelegate.swift */; };
-		259FBA451B02F5A5006F1650 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA441B02F5A5006F1650 /* ViewController.swift */; };
 		259FBA481B02F5A5006F1650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259FBA461B02F5A5006F1650 /* Main.storyboard */; };
 		259FBA4A1B02F5A6006F1650 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259FBA491B02F5A6006F1650 /* Images.xcassets */; };
 		259FBA4D1B02F5A6006F1650 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 259FBA4B1B02F5A6006F1650 /* LaunchScreen.xib */; };
 		259FBA591B02F5A6006F1650 /* XCHATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA581B02F5A6006F1650 /* XCHATTests.swift */; };
+		259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA621B02F627006F1650 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		259FBA3D1B02F5A5006F1650 /* XCHAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCHAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259FBA411B02F5A5006F1650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		259FBA421B02F5A5006F1650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		259FBA441B02F5A5006F1650 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		259FBA471B02F5A5006F1650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		259FBA491B02F5A6006F1650 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		259FBA4C1B02F5A6006F1650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		259FBA521B02F5A6006F1650 /* XCHATTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XCHATTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		259FBA571B02F5A6006F1650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		259FBA581B02F5A6006F1650 /* XCHATTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCHATTests.swift; sourceTree = "<group>"; };
+		259FBA621B02F627006F1650 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		259FBA3F1B02F5A5006F1650 /* XCHAT */ = {
 			isa = PBXGroup;
 			children = (
+				259FBA641B02F62C006F1650 /* View Controllers */,
 				259FBA421B02F5A5006F1650 /* AppDelegate.swift */,
-				259FBA441B02F5A5006F1650 /* ViewController.swift */,
 				259FBA461B02F5A5006F1650 /* Main.storyboard */,
 				259FBA491B02F5A6006F1650 /* Images.xcassets */,
 				259FBA4B1B02F5A6006F1650 /* LaunchScreen.xib */,
@@ -110,6 +110,14 @@
 				259FBA571B02F5A6006F1650 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		259FBA641B02F62C006F1650 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				259FBA621B02F627006F1650 /* ChatViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				259FBA451B02F5A5006F1650 /* ViewController.swift in Sources */,
+				259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */,
 				259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
