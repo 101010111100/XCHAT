@@ -12,10 +12,42 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    var hamburgerViewController: HamburgerViewController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Parse.setApplicationId("cEpg8HAH75eVLcqfp9VfbQIdUJ1lz7XVMwrZ5EYc", clientKey: "Ldbj47H9IXlzbIKkW1W7DkK2YvbeAfdCTVyregTL")
+        
+        PFUser.enableRevocableSessionInBackgroundWithBlock { (error: NSError?) -> Void in
+            println("IDK")
+        }
+        
         // Override point for customization after application launch.
+        // NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        
+        
+        // IF USER IS LOGGED IN
+        // if User.currentUser != nil {
+            
+            // ** SETS START VIEW **
+            hamburgerViewController = storyboard.instantiateViewControllerWithIdentifier("HamburgerViewController") as? HamburgerViewController
+            
+            var menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            var profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            
+            hamburgerViewController!.menuViewController = menuViewController
+            menuViewController.hamburgerViewController = hamburgerViewController
+        
+            // SET START VIEW TO THREADS
+        
+            hamburgerViewController!.contentViewController = profileViewController
+            
+            // does exactly the same as arrow in storyboard   ("100% parity" --Tim Lee)
+            window?.rootViewController = hamburgerViewController
+        // }
+        
         return true
     }
 
