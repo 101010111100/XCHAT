@@ -36,10 +36,7 @@ class MainViewController: UIViewController {
         {
             presentViewController(resultController, animated: true, completion: nil)
         }
-        else{
-            println("fuck")
-        }
-        
+
         
         
     }
