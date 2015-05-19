@@ -33,19 +33,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zrl-6k-xCn" id="iSx-GQ-eYL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-EL-Qtj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-EL-Qtj">
                                                     <rect key="frame" x="27" y="18" width="184" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgP-aN-vhf">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgP-aN-vhf">
                                                     <rect key="frame" x="254" y="13" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchChanged:" destination="Zrl-6k-xCn" eventType="valueChanged" id="NjH-Xf-Ao6"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ae4-EL-Qtj" firstAttribute="top" secondItem="iSx-GQ-eYL" secondAttribute="top" constant="18" id="I1n-Xb-Ecd"/>
+                                                <constraint firstItem="OgP-aN-vhf" firstAttribute="leading" secondItem="ae4-EL-Qtj" secondAttribute="trailing" constant="43" id="R3u-EO-cXL"/>
+                                                <constraint firstAttribute="trailing" secondItem="OgP-aN-vhf" secondAttribute="trailing" constant="17" id="iQx-Oe-xxl"/>
+                                                <constraint firstAttribute="bottom" secondItem="OgP-aN-vhf" secondAttribute="bottom" constant="13.5" id="jAf-gI-mC1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ae4-EL-Qtj" secondAttribute="bottom" constant="18.5" id="pVm-3c-dAh"/>
+                                                <constraint firstItem="OgP-aN-vhf" firstAttribute="top" secondItem="iSx-GQ-eYL" secondAttribute="top" constant="13" id="qV4-hk-Mov"/>
+                                                <constraint firstItem="ae4-EL-Qtj" firstAttribute="leading" secondItem="iSx-GQ-eYL" secondAttribute="leading" constant="27" id="rba-a6-TyA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="label" destination="ae4-EL-Qtj" id="dGz-AX-vDk"/>
