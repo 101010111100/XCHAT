@@ -23,11 +23,25 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func goToPage(sender: AnyObject) {
-        var notificationStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
-        if let resultController =        notificationStoryboard.instantiateViewControllerWithIdentifier("Settings") as? NotificationsSettingsViewController
+
+        
+//        var notificationStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
+//        if let resultController =        notificationStoryboard.instantiateViewControllerWithIdentifier("Settings") as? NotificationsSettingsViewController
+//        {
+//            presentViewController(resultController, animated: true, completion: nil)
+//        }
+        
+        var notificationStoryboard = UIStoryboard(name: "Threads", bundle: nil)
+        if let resultController =        notificationStoryboard.instantiateViewControllerWithIdentifier("Nav") as? UINavigationController
         {
             presentViewController(resultController, animated: true, completion: nil)
         }
+        else{
+            println("fuck")
+        }
+        
+        
+        
     }
 
     /*
