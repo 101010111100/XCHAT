@@ -13,6 +13,12 @@
 		259FBA4D1B02F5A6006F1650 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 259FBA4B1B02F5A6006F1650 /* LaunchScreen.xib */; };
 		259FBA591B02F5A6006F1650 /* XCHATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA581B02F5A6006F1650 /* XCHATTests.swift */; };
 		259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA621B02F627006F1650 /* ChatViewController.swift */; };
+		384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */; };
+		384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */; };
+		384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F51B0AE15E00A04081 /* MessageViewController.swift */; };
+		384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F71B0AE17900A04081 /* MessageTableViewCell.swift */; };
+		384F22FA1B0AE18D00A04081 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */; };
+		384F23001B0AE2D400A04081 /* Threads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F22FF1B0AE2D400A04081 /* Threads.storyboard */; };
 		3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3878660D1B0475B500623BC1 /* PushHelper.swift */; };
 		387866101B0478C400623BC1 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */; };
 		387866121B0479D100623BC1 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */; };
@@ -57,6 +63,12 @@
 		259FBA571B02F5A6006F1650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		259FBA581B02F5A6006F1650 /* XCHATTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCHATTests.swift; sourceTree = "<group>"; };
 		259FBA621B02F627006F1650 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
+		384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
+		384F22F51B0AE15E00A04081 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		384F22F71B0AE17900A04081 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
+		384F22FF1B0AE2D400A04081 /* Threads.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Threads.storyboard; sourceTree = "<group>"; };
 		3878660D1B0475B500623BC1 /* PushHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHelper.swift; sourceTree = "<group>"; };
 		3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
@@ -138,15 +150,12 @@
 		259FBA3F1B02F5A5006F1650 /* XCHAT */ = {
 			isa = PBXGroup;
 			children = (
+				384F22F01B0AE0D500A04081 /* Threads */,
+				384F22EF1B0AE08A00A04081 /* Notifications */,
 				259FBA641B02F62C006F1650 /* View Controllers */,
 				259FBA421B02F5A5006F1650 /* AppDelegate.swift */,
 				259FBA461B02F5A5006F1650 /* Main.storyboard */,
-				3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */,
-				387866131B047A2100623BC1 /* NotificationsTableViewCell.swift */,
 				387866151B04829200623BC1 /* MainViewController.swift */,
-				387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */,
-				3878660D1B0475B500623BC1 /* PushHelper.swift */,
-				387866171B0488B700623BC1 /* NotificationSettingConstants.swift */,
 				259FBA491B02F5A6006F1650 /* Images.xcassets */,
 				259FBA4B1B02F5A6006F1650 /* LaunchScreen.xib */,
 				259FBA401B02F5A5006F1650 /* Supporting Files */,
@@ -187,6 +196,31 @@
 				259FBA621B02F627006F1650 /* ChatViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		384F22EF1B0AE08A00A04081 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */,
+				387866131B047A2100623BC1 /* NotificationsTableViewCell.swift */,
+				387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */,
+				3878660D1B0475B500623BC1 /* PushHelper.swift */,
+				387866171B0488B700623BC1 /* NotificationSettingConstants.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		384F22F01B0AE0D500A04081 /* Threads */ = {
+			isa = PBXGroup;
+			children = (
+				384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */,
+				384F22FF1B0AE2D400A04081 /* Threads.storyboard */,
+				384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */,
+				384F22F51B0AE15E00A04081 /* MessageViewController.swift */,
+				384F22F71B0AE17900A04081 /* MessageTableViewCell.swift */,
+				384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */,
+			);
+			name = Threads;
 			sourceTree = "<group>";
 		};
 		3E0F26945D5D8483DE7A5FFC /* Frameworks */ = {
@@ -301,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384F23001B0AE2D400A04081 /* Threads.storyboard in Resources */,
 				259FBA481B02F5A5006F1650 /* Main.storyboard in Resources */,
 				3887E9EE1B04365E00D16CF6 /* Credentials.plist in Resources */,
 				259FBA4D1B02F5A6006F1650 /* LaunchScreen.xib in Resources */,
@@ -356,11 +391,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */,
 				3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */,
+				384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */,
 				259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */,
+				384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */,
+				384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */,
 				387866141B047A2100623BC1 /* NotificationsTableViewCell.swift in Sources */,
 				387866161B04829200623BC1 /* MainViewController.swift in Sources */,
 				387866181B0488B700623BC1 /* NotificationSettingConstants.swift in Sources */,
+				384F22FA1B0AE18D00A04081 /* NewThreadViewController.swift in Sources */,
 				387866121B0479D100623BC1 /* NotificationsSettingsViewController.swift in Sources */,
 				259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */,
 			);
