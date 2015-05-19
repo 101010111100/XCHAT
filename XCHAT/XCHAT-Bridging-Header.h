@@ -5,3 +5,4 @@
 # import "PFAnalytics.h"
 # import "PFInstallation.h"
 
+#import <Parse/Parse.h>
