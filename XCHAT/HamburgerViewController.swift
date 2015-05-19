@@ -21,7 +21,7 @@ class HamburgerViewController: UIViewController {
     // Observer method
     var contentViewController: UIViewController? {
         didSet {
-            println("CONTENT VIEW CONFIG")
+            //println("CONTENT VIEW CONFIG")
             configureContentViewController()
         }
     }
@@ -29,14 +29,14 @@ class HamburgerViewController: UIViewController {
     // Observer method
     var menuViewController: UIViewController? {
         didSet {
-            println("MENU VIEW CONFIG")
+           // println("MENU VIEW CONFIG")
             configureMenuViewController()
         }
     }
     
     func configureContentViewController() {
         if contentView != nil {
-            println("CONTENT SUCCESS")
+            //println("CONTENT SUCCESS")
             contentViewController!.view.frame = contentView.bounds
             for subview in contentView.subviews {
                 subview.removeFromSuperview()
@@ -52,7 +52,7 @@ class HamburgerViewController: UIViewController {
     
     func configureMenuViewController() {
         if menuView != nil {
-            println("MENU SUCCESS")
+            //println("MENU SUCCESS")
             menuViewController!.view.frame = menuView.bounds
             for subview in menuView.subviews {
                 subview.removeFromSuperview()
@@ -81,7 +81,7 @@ class HamburgerViewController: UIViewController {
         var translation = sender.translationInView(view)
         var velocity = sender.velocityInView(view)
         
-        println("PAN GESTURE DETECTED")
+        //println("PAN GESTURE DETECTED")
         
         if sender.state == UIGestureRecognizerState.Began {
             contentViewOriginalOrigin = contentView.frame.origin
