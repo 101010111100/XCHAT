@@ -50,30 +50,30 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             var cell = tableView.dequeueReusableCellWithIdentifier("MembersCell") as! UITableViewCell
             return cell
         default:
-            var cell = tableView.dequeueReusableCellWithIdentifier("SettingssCell") as! UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as! UITableViewCell
             return cell
         }
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 6
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         switch indexPath.row {
-        case 0:
+        default:
             var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             // SETUP PROFILE
             
             hamburgerViewController?.contentViewController = profileViewController
-        default:
-            var chatNavigationController = storyboard!.instantiateViewControllerWithIdentifier("ChatNavigationController") as! UINavigationController
-            var chatViewController = chatNavigationController.viewControllers[0] as! ChatViewController
-            hamburgerViewController?.contentViewController = chatNavigationController
+//        default:
+//            var chatNavigationController = storyboard!.instantiateViewControllerWithIdentifier("ChatNavigationController") as! UINavigationController
+//            var chatViewController = chatNavigationController.viewControllers[0] as! ChatViewController
+//            hamburgerViewController?.contentViewController = chatNavigationController
         }
     }
     
