@@ -64,16 +64,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         switch indexPath.row {
-        default:
+        case 0:
             var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             // SETUP PROFILE
             
             hamburgerViewController?.contentViewController = profileViewController
-//        default:
-//            var chatNavigationController = storyboard!.instantiateViewControllerWithIdentifier("ChatNavigationController") as! UINavigationController
-//            var chatViewController = chatNavigationController.viewControllers[0] as! ChatViewController
-//            hamburgerViewController?.contentViewController = chatNavigationController
+        default:
+            var reelNavigationController = storyboard!.instantiateViewControllerWithIdentifier("ReelNavigationController") as! UINavigationController
+            var reelViewController = reelNavigationController.viewControllers[0] as! ReelViewController
+            hamburgerViewController?.contentViewController = reelNavigationController
         }
     }
     

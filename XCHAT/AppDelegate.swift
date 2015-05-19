@@ -48,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = hamburgerViewController
         // }
         
+        // var reelVC = storyboard.instantiateViewControllerWithIdentifier("ReelViewController") as! ReelViewController
+        // reelVC.refreshData()
+        
         return true
     }
 

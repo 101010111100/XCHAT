@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251317541B0ADF4500879526 /* ReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317531B0ADF4500879526 /* ReelViewController.swift */; };
+		251317591B0B12F900879526 /* ReelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317581B0B12F900879526 /* ReelCell.swift */; };
 		255774D51B0585FC0042FAED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255774D41B0585FC0042FAED /* ProfileViewController.swift */; };
 		257A6B721B056D5B00996A56 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A6B711B056D5B00996A56 /* HamburgerViewController.swift */; };
 		259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA421B02F5A5006F1650 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		251317531B0ADF4500879526 /* ReelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelViewController.swift; sourceTree = "<group>"; };
+		251317581B0B12F900879526 /* ReelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelCell.swift; sourceTree = "<group>"; };
 		255774D41B0585FC0042FAED /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		257A6B711B056D5B00996A56 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		259FBA3D1B02F5A5006F1650 /* XCHAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCHAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251317551B0B0EA800879526 /* Reel */ = {
+			isa = PBXGroup;
+			children = (
+				251317531B0ADF4500879526 /* ReelViewController.swift */,
+				251317581B0B12F900879526 /* ReelCell.swift */,
+			);
+			name = Reel;
+			sourceTree = "<group>";
+		};
 		259FBA341B02F5A5006F1650 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +104,7 @@
 		259FBA3F1B02F5A5006F1650 /* XCHAT */ = {
 			isa = PBXGroup;
 			children = (
+				251317551B0B0EA800879526 /* Reel */,
 				259FBA641B02F62C006F1650 /* View Controllers */,
 				259FBA421B02F5A5006F1650 /* AppDelegate.swift */,
 				259FBA461B02F5A5006F1650 /* Main.storyboard */,
@@ -294,6 +308,8 @@
 				25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */,
 				25F016061B045882004D78F6 /* LoginViewController.swift in Sources */,
 				255774D51B0585FC0042FAED /* ProfileViewController.swift in Sources */,
+				251317591B0B12F900879526 /* ReelCell.swift in Sources */,
+				251317541B0ADF4500879526 /* ReelViewController.swift in Sources */,
 				259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

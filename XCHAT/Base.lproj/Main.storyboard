@@ -163,6 +163,76 @@
             </objects>
             <point key="canvasLocation" x="605" y="306"/>
         </scene>
+        <!--Reel-->
+        <scene sceneID="LjT-iH-6IO">
+            <objects>
+                <viewController storyboardIdentifier="ReelViewController" id="XJz-aT-tyt" customClass="ReelViewController" customModule="XCHAT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h8A-ei-e9J"/>
+                        <viewControllerLayoutGuide type="bottom" id="rEr-kd-Ur9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lfC-fw-AC7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XAa-ko-hAw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uUJ-HE-UYW">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReelCell" id="x7C-2V-dMp" customClass="ReelCell" customModule="XCHAT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fPA-KE-gwb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fPA-KE-gwb" firstAttribute="top" secondItem="x7C-2V-dMp" secondAttribute="top" id="1G5-yC-4p7"/>
+                                            <constraint firstItem="fPA-KE-gwb" firstAttribute="leading" secondItem="x7C-2V-dMp" secondAttribute="leading" id="8ix-b0-5Qa"/>
+                                            <constraint firstAttribute="trailing" secondItem="fPA-KE-gwb" secondAttribute="trailing" id="GGd-Dd-SQt"/>
+                                            <constraint firstAttribute="bottom" secondItem="fPA-KE-gwb" secondAttribute="bottom" id="o0k-cE-NhK"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="fPA-KE-gwb" id="T3Z-hP-IUF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rEr-kd-Ur9" firstAttribute="top" secondItem="XAa-ko-hAw" secondAttribute="bottom" id="Dby-Nn-c2c"/>
+                            <constraint firstItem="XAa-ko-hAw" firstAttribute="leading" secondItem="lfC-fw-AC7" secondAttribute="leading" id="Hmj-hc-WBT"/>
+                            <constraint firstItem="XAa-ko-hAw" firstAttribute="top" secondItem="lfC-fw-AC7" secondAttribute="top" id="YxZ-Do-8N0"/>
+                            <constraint firstAttribute="trailing" secondItem="XAa-ko-hAw" secondAttribute="trailing" id="olh-qE-NsR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reel" id="zqJ-Td-yO5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kKG-d6-f5h">
+                            <connections>
+                                <action selector="onAddButtonTapped:" destination="XJz-aT-tyt" id="Tlj-JQ-Tq2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="XAa-ko-hAw" id="22d-hu-2et"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCv-Hg-68e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="1054"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="9we-nf-O7c">
             <objects>
@@ -426,7 +496,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6K-fA-Wil" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="1054"/>
+            <point key="canvasLocation" x="1102" y="306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="miI-Js-wsQ">
+            <objects>
+                <navigationController storyboardIdentifier="ReelNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ANE-nm-NX4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jr2-da-Bcv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XJz-aT-tyt" kind="relationship" relationship="rootViewController" id="mSj-pR-4RG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nS-L5-cIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="1054"/>
         </scene>
     </scenes>
     <resources>

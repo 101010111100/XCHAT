@@ -81,7 +81,7 @@ class HamburgerViewController: UIViewController {
         var translation = sender.translationInView(view)
         var velocity = sender.velocityInView(view)
         
-        println("PAN GESTURE DETECTED")
+        // println("PAN GESTURE DETECTED")
         
         if sender.state == UIGestureRecognizerState.Began {
             contentViewOriginalOrigin = contentView.frame.origin
