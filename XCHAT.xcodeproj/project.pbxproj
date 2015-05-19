@@ -16,14 +16,13 @@
 		259FBA591B02F5A6006F1650 /* XCHATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA581B02F5A6006F1650 /* XCHATTests.swift */; };
 		25F016061B045882004D78F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016051B045882004D78F6 /* LoginViewController.swift */; };
 		25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016091B045D83004D78F6 /* MenuViewController.swift */; };
-		384F23051B0AEE8200A04081 /* Hamburger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F23041B0AEE8200A04081 /* Hamburger.storyboard */; };
-		259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA621B02F627006F1650 /* ChatViewController.swift */; };
 		384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */; };
 		384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */; };
 		384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F51B0AE15E00A04081 /* MessageViewController.swift */; };
 		384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F71B0AE17900A04081 /* MessageTableViewCell.swift */; };
 		384F22FA1B0AE18D00A04081 /* NewThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */; };
 		384F23001B0AE2D400A04081 /* Threads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F22FF1B0AE2D400A04081 /* Threads.storyboard */; };
+		384F23051B0AEE8200A04081 /* Hamburger.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F23041B0AEE8200A04081 /* Hamburger.storyboard */; };
 		3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3878660D1B0475B500623BC1 /* PushHelper.swift */; };
 		387866101B0478C400623BC1 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */; };
 		387866121B0479D100623BC1 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */; };
@@ -71,14 +70,13 @@
 		259FBA581B02F5A6006F1650 /* XCHATTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCHATTests.swift; sourceTree = "<group>"; };
 		25F016051B045882004D78F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		25F016091B045D83004D78F6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		384F23041B0AEE8200A04081 /* Hamburger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hamburger.storyboard; sourceTree = "<group>"; };
-		259FBA621B02F627006F1650 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
 		384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
 		384F22F51B0AE15E00A04081 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		384F22F71B0AE17900A04081 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewThreadViewController.swift; sourceTree = "<group>"; };
 		384F22FF1B0AE2D400A04081 /* Threads.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Threads.storyboard; sourceTree = "<group>"; };
+		384F23041B0AEE8200A04081 /* Hamburger.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hamburger.storyboard; sourceTree = "<group>"; };
 		3878660D1B0475B500623BC1 /* PushHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHelper.swift; sourceTree = "<group>"; };
 		3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
@@ -204,38 +202,8 @@
 		259FBA641B02F62C006F1650 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				259FBA621B02F627006F1650 /* ChatViewController.swift */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		384F23011B0AE90C00A04081 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				257A6B711B056D5B00996A56 /* HamburgerViewController.swift */,
-				25F016091B045D83004D78F6 /* MenuViewController.swift */,
-				384F23041B0AEE8200A04081 /* Hamburger.storyboard */,
-				25F016051B045882004D78F6 /* LoginViewController.swift */,
-				255774D41B0585FC0042FAED /* ProfileViewController.swift */,
-			);
-			name = Menu;
-			sourceTree = "<group>";
-		};
-		7043C3CF7A84F05319E18820 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A8469C60EDB32747ACDDA74A /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7B35422B3A3D45EC9502765E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				41AC825493FB88C3AB135351 /* Pods.debug.xcconfig */,
-				626B855E3CA083849FA3E870 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		384F22EF1B0AE08A00A04081 /* Notifications */ = {
@@ -261,6 +229,18 @@
 				384F22F91B0AE18D00A04081 /* NewThreadViewController.swift */,
 			);
 			name = Threads;
+			sourceTree = "<group>";
+		};
+		384F23011B0AE90C00A04081 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				257A6B711B056D5B00996A56 /* HamburgerViewController.swift */,
+				25F016091B045D83004D78F6 /* MenuViewController.swift */,
+				384F23041B0AEE8200A04081 /* Hamburger.storyboard */,
+				25F016051B045882004D78F6 /* LoginViewController.swift */,
+				255774D41B0585FC0042FAED /* ProfileViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		3E0F26945D5D8483DE7A5FFC /* Frameworks */ = {
@@ -439,7 +419,6 @@
 				384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */,
 				3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */,
 				384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */,
-				259FBA631B02F627006F1650 /* ChatViewController.swift in Sources */,
 				384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */,
 				384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */,
 				387866141B047A2100623BC1 /* NotificationsTableViewCell.swift in Sources */,
