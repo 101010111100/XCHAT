@@ -42,6 +42,10 @@
 		3887EA041B043AF600D16CF6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887EA031B043AF600D16CF6 /* libsqlite3.dylib */; };
 		3887EA061B043AFC00D16CF6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887EA051B043AFC00D16CF6 /* Accounts.framework */; };
 		3887EA081B043B0000D16CF6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887EA071B043B0000D16CF6 /* Social.framework */; };
+		3890A1CD1B0B17D000B4FF00 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890A1CC1B0B17D000B4FF00 /* EventViewController.swift */; };
+		3890A1CF1B0B17EB00B4FF00 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890A1CE1B0B17EB00B4FF00 /* EventViewCell.swift */; };
+		3890A1D11B0B17F600B4FF00 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3890A1D01B0B17F600B4FF00 /* NewEventViewController.swift */; };
+		3890A1D31B0B187C00B4FF00 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3890A1D21B0B187C00B4FF00 /* Events.storyboard */; };
 		8277069B6158641E38C18072 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77568E524011CF02E88AD2C4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +100,10 @@
 		3887EA051B043AFC00D16CF6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3887EA071B043B0000D16CF6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3887EA091B043B2700D16CF6 /* XCHAT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCHAT-Bridging-Header.h"; sourceTree = "<group>"; };
+		3890A1CC1B0B17D000B4FF00 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		3890A1CE1B0B17EB00B4FF00 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
+		3890A1D01B0B17F600B4FF00 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		3890A1D21B0B187C00B4FF00 /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
 		665469A4E8500E356B430164 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		77568E524011CF02E88AD2C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CB94052FC1EB451EC27E96 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 		259FBA3F1B02F5A5006F1650 /* XCHAT */ = {
 			isa = PBXGroup;
 			children = (
+				3890A1CB1B0B17B900B4FF00 /* Events */,
 				384F23011B0AE90C00A04081 /* Menu */,
 				384F22F01B0AE0D500A04081 /* Threads */,
 				384F22EF1B0AE08A00A04081 /* Notifications */,
@@ -238,6 +247,17 @@
 				255774D41B0585FC0042FAED /* ProfileViewController.swift */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		3890A1CB1B0B17B900B4FF00 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				3890A1CC1B0B17D000B4FF00 /* EventViewController.swift */,
+				3890A1CE1B0B17EB00B4FF00 /* EventViewCell.swift */,
+				3890A1D01B0B17F600B4FF00 /* NewEventViewController.swift */,
+				3890A1D21B0B187C00B4FF00 /* Events.storyboard */,
+			);
+			name = Events;
 			sourceTree = "<group>";
 		};
 		3E0F26945D5D8483DE7A5FFC /* Frameworks */ = {
@@ -354,6 +374,7 @@
 			files = (
 				384F23001B0AE2D400A04081 /* Threads.storyboard in Resources */,
 				259FBA481B02F5A5006F1650 /* Main.storyboard in Resources */,
+				3890A1D31B0B187C00B4FF00 /* Events.storyboard in Resources */,
 				3887E9EE1B04365E00D16CF6 /* Credentials.plist in Resources */,
 				259FBA4D1B02F5A6006F1650 /* LaunchScreen.xib in Resources */,
 				387866101B0478C400623BC1 /* NotificationSettings.storyboard in Resources */,
@@ -412,8 +433,11 @@
 				25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */,
 				25F016061B045882004D78F6 /* LoginViewController.swift in Sources */,
 				255774D51B0585FC0042FAED /* ProfileViewController.swift in Sources */,
+				3890A1D11B0B17F600B4FF00 /* NewEventViewController.swift in Sources */,
 				384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */,
+				3890A1CD1B0B17D000B4FF00 /* EventViewController.swift in Sources */,
 				3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */,
+				3890A1CF1B0B17EB00B4FF00 /* EventViewCell.swift in Sources */,
 				384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */,
 				384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */,
 				384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */,

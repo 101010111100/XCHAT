@@ -71,7 +71,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             hamburgerViewController?.contentViewController = chatNavigationController
             //threads
         case 2:
-            1
+            var threadsStoryboard = UIStoryboard(name: "Events", bundle: nil)
+            var eventsNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
+            hamburgerViewController?.contentViewController = eventsNavigationController
             //calendar
         case 3:
             1
