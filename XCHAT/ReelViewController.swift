@@ -71,7 +71,7 @@ class ReelViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("ReelCell", forIndexPath: indexPath) as ReelCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("ReelCell", forIndexPath: indexPath) as! ReelCell
         println("\(photos.count) PHOTOS")
         var photo = photos.objectAtIndex(indexPath.item) as? NSMutableDictionary
         cell.setUpCell(photo)

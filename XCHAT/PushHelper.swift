@@ -15,7 +15,8 @@ class PushHelper{
         // When users indicate they are Giants fans, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.addUniqueObject("Giants", forKey: "channels")
-        currentInstallation.saveInBackgroundWithBlock({ (success:Bool, error:NSError!) -> Void in
+        
+        currentInstallation.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
             // nothing
         })
     }
@@ -25,28 +26,28 @@ class PushHelper{
         // When users indicate they are Giants fans, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.removeObject("Giants" ,forKey: "channels")
-        currentInstallation.saveInBackgroundWithBlock({ (success:Bool, error:NSError!) -> Void in
+        currentInstallation.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
             // nothing
         })
     }
     
     class func subscribedChannels()->([NSString]){
-        return PFInstallation.currentInstallation().channels as [NSString]
+        return PFInstallation.currentInstallation().channels as! [NSString]
     }
     
     func pushToChannel(message: NSString, channel:NSString){
         let push = PFPush()
-        push.setChannel(channel)
-        push.setMessage(message)
-        push.sendPushInBackgroundWithBlock { (success:Bool, error:NSError!) -> Void in
+        push.setChannel(channel as! String)
+        push.setMessage(message as! String)
+        push.sendPushInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
         }
     }
     
     class func pushToChannels(message: NSString, channels:[NSString]){
         let push = PFPush()
         push.setChannels(channels)
-        push.setMessage(message)
-        push.sendPushInBackgroundWithBlock { (success:Bool, error:NSError!) -> Void in
+        push.setMessage(message as String)
+        push.sendPushInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
             //
         }
     }
