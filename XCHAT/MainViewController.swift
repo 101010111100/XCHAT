@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var mainButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,25 +19,7 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
     
-    @IBAction func goToPage(sender: AnyObject) {
-
-        
-//        var notificationStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
-//        if let resultController =        notificationStoryboard.instantiateViewControllerWithIdentifier("Settings") as? NotificationsSettingsViewController
-//        {
-//            presentViewController(resultController, animated: true, completion: nil)
-//        }
-        
-        var notificationStoryboard = UIStoryboard(name: "Threads", bundle: nil)
-        if let resultController =        notificationStoryboard.instantiateViewControllerWithIdentifier("Nav") as? UINavigationController
-        {
-            presentViewController(resultController, animated: true, completion: nil)
-        }
-
-        
-        
     }
 
     /*

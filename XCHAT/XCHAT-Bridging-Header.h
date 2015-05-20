@@ -4,5 +4,5 @@
 # import "Parse.h"
 # import "PFAnalytics.h"
 # import "PFInstallation.h"
-
+#import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>

@@ -63,7 +63,31 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        print(indexPath.row)
         switch indexPath.row {
+        case 1:
+            var threadsStoryboard = UIStoryboard(name: "Threads", bundle: nil)
+            var chatNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
+            hamburgerViewController?.contentViewController = chatNavigationController
+            //threads
+        case 2:
+            var eventsStoryboard = UIStoryboard(name: "Events", bundle: nil)
+            var eventsNavigationController = eventsStoryboard.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
+            hamburgerViewController?.contentViewController = eventsNavigationController
+            //calendar
+        case 3:
+            var reelStoryboard = UIStoryboard(name: "Reel", bundle: nil)
+            var reelNavigationController = reelStoryboard.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
+            hamburgerViewController?.contentViewController = reelNavigationController
+            //reel
+        case 4:
+            1
+            //members
+        case 5:
+            var threadsStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
+            var notificationSettingsController = threadsStoryboard.instantiateViewControllerWithIdentifier("Settings") as NotificationsSettingsViewController
+            hamburgerViewController?.contentViewController = notificationSettingsController
+            //settings
         default:
             var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as ProfileViewController
             
