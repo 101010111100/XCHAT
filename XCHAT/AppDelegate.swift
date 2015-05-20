@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // ** SETS START VIEW **
             hamburgerViewController = storyboard.instantiateViewControllerWithIdentifier("HamburgerViewController") as? HamburgerViewController
             
-            var menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as MenuViewController
-            var profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as ProfileViewController
+            var menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            var profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             hamburgerViewController!.menuViewController = menuViewController
             menuViewController.hamburgerViewController = hamburgerViewController
@@ -50,10 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if let path=NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
             var myDict = NSDictionary(contentsOfFile: path)
-            let appId = myDict!.valueForKey("appId") as NSString
-            let clientKey = myDict!.valueForKey("clientKey") as NSString
-            Parse.setApplicationId(appId,
-                clientKey: clientKey)
+            let appId = myDict!.valueForKey("appId") as! NSString
+            let clientKey = myDict!.valueForKey("clientKey")as! NSString
+            Parse.setApplicationId(appId as String,
+                clientKey: clientKey as String)
             
             // Register for Push Notitications
             if application.applicationState != UIApplicationState.Background {
@@ -89,11 +89,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
         //there's no empty saveInBackground method
-        installation.saveInBackgroundWithBlock({ (success: Bool, error: NSError!) -> Void in
-            //nothing here for callback
-        })
-
+        installation.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+                       //nothing here for callback
+        }
     }
+    
+            
+   
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         if error.code == 3010 {
@@ -101,13 +103,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
         }
+        
     }
+
+        
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
         if application.applicationState == UIApplicationState.Inactive {
-            PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(userInfo, block: { (success: Bool, error: NSError!) -> Void in
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(userInfo, block: { (success:Bool, error:NSError?) -> Void in
                 //nothing here for callback
+
             })
         }
     }

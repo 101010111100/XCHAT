@@ -41,12 +41,12 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
         //        cell.endTimeLabel.text = dateFormatter.stringFromDate(eventForRow["end"] as! NSDate)
         //        var cell = tableView.dequeueReusableCellWithIdentifier("EventViewCell", forIndexPath: indexPath) as! EventViewCell
         //
-        var cell = tableView.dequeueReusableCellWithIdentifier("EventViewCell", forIndexPath: indexPath) as EventViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("EventViewCell", forIndexPath: indexPath) as! EventViewCell
         let eventForRow = events[indexPath.row] as PFObject
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
-        cell.startTimeLabel.text = dateFormatter.stringFromDate(eventForRow["start"] as NSDate)
-        cell.endTimeLabel.text = dateFormatter.stringFromDate(eventForRow["end"] as NSDate)
+        cell.startTimeLabel.text = dateFormatter.stringFromDate(eventForRow["start"] as! NSDate)
+        cell.endTimeLabel.text = dateFormatter.stringFromDate(eventForRow["end"] as! NSDate)
 
         cell.eventNameLabel.text = eventForRow["eventName"] as? String
         cell.eventLocationLabel.text = eventForRow["eventLocation"] as? String
@@ -83,7 +83,7 @@ class EventViewController: UIViewController, UITableViewDataSource, UITableViewD
             if objects != nil {
                 println(objects)
                 //self.events = (objects as! [PFObject]?)!
-                self.events = objects as [PFObject]
+                self.events = objects as! [PFObject]
                 self.tableView.reloadData()
             } else {
                 println("object is nil")

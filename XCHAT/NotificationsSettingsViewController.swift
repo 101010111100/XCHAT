@@ -34,7 +34,7 @@ class NotificationsSettingsViewController: UIViewController, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("NTCell", forIndexPath: indexPath) as NotificationsTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("NTCell", forIndexPath: indexPath) as! NotificationsTableViewCell
         cell.delegate = self
 
         cell.label.text =  NotificationSettingConstants.settingsList[indexPath.row]
