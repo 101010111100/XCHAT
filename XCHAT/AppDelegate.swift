@@ -47,11 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // does exactly the same as arrow in storyboard   ("100% parity" --Tim Lee)
             window?.rootViewController = hamburgerViewController
         // }
+        
+        
 
-        if let path=NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
-            var myDict = NSDictionary(contentsOfFile: path)
-            let appId = myDict!.valueForKey("appId") as! NSString
-            let clientKey = myDict!.valueForKey("clientKey")as! NSString
+        //if let path=NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
+            //var myDict = NSDictionary(contentsOfFile: path)
+            //let appId = myDict!.valueForKey("appId") as! NSString
+            //let clientKey = myDict!.valueForKey("clientKey")as! NSString
+            let appId = "cEpg8HAH75eVLcqfp9VfbQIdUJ1lz7XVMwrZ5EYc"
+            let clientKey = "Ldbj47H9IXlzbIKkW1W7DkK2YvbeAfdCTVyregTL"
             Parse.setApplicationId(appId as String,
                 clientKey: clientKey as String)
             
@@ -81,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
                 application.registerForRemoteNotificationTypes(types)
             }
-        }
+       // }
         return true
     }
     
