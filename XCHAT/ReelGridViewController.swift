@@ -1,38 +1,26 @@
 //
-//  ReelScrollViewController.swift
+//  ReelViewController.swift
 //  XCHAT
 //
-//  Created by Mateo Garcia on 5/19/15.
+//  Created by Mateo Garcia on 5/18/15.
 //  Copyright (c) 2015 Mateo Garcia. All rights reserved.
 //
 
 import UIKit
 
-class ReelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ReelGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photos = NSMutableArray()
-    var uploadImage: UIImage?
-    
-    var refreshControl: UIRefreshControl!
-    
-    let headerWidth = 320
-    let headerHeight = 46
-    let profileWidthHeight = 30
+    var chosenImage: UIImage?
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         refreshData()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = 320
-        
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        tableView.insertSubview(refreshControl, atIndex: 0)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +45,6 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
                     var i = 0
                     for object in objects {
                         var photo = NSMutableDictionary()
-                        
                         if let imageName = object.objectForKey("imageName") as? String {
                             photo.setObject(object.objectForKey("imageName")!, forKey: "imageName")
                         }
@@ -69,7 +56,7 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
                         self.photos.addObject(photo)
                     }
                 }
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             } else {
                 // Log details of the failure
                 println("Error: \(error!) \(error!.userInfo!)")
@@ -77,55 +64,25 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func onRefresh() {
-        refreshData()
-        refreshControl.endRefreshing()
+    // MARK: CollectionView
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
     }
     
-    // MARK: TableView
-    
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var headerView=UIView(frame: CGRect(x: 0, y: 0, width: headerWidth, height: headerHeight)   )
-        headerView.backgroundColor = UIColor(white: 3, alpha: 0.5)
-        
-        var profilePicture = UIImageView(frame: CGRect(x: 8 , y: 8, width: profileWidthHeight, height: profileWidthHeight))
-        profilePicture.backgroundColor = UIColor.redColor()
-        
-        // profilePicture.setImageWithURL(NSURL(string: url!)!)
-        
-        headerView.insertSubview(profilePicture, atIndex: 0)
-        
-        return headerView
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(self.headerHeight)
-    }
-    
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
-        // var photo = self.photos[indexPath.section] as NSDictionary
-        // var url = photo.valueForKeyPath("images.standard_resolution.url") as? String
-        
-        
-        // cell.photoView.setImageWithURL(NSURL(string: url!)!)
-        var photo = photos.objectAtIndex(indexPath.row) as? NSMutableDictionary
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("ReelCell", forIndexPath: indexPath) as! ReelGridCell
+        println("\(photos.count) PHOTOS")
+        var photo = photos.objectAtIndex(indexPath.item) as? NSMutableDictionary
         cell.setUpCell(photo)
         
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return photos.count
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        // open up selected photo
+        
     }
     
     // MARK: Actions
@@ -138,22 +95,22 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         presentViewController(imageVC, animated: true, completion: nil) // FIXME: Causes warning 'Presenting view controllers on detached view controllers is discouraged'
     }
     
-    // MARK: ImagePickerController
+    // MARK: ImagePickerControler
     
     // Triggered when the user finishes taking an image.  Saves the chosen image
     // to our temporary chosenImage variable, and dismisses the
     // image picker view controller.  Once the image picker view controller is
     // dismissed (a.k.a. inside the completion handler) we modally segue to
-    // show the "Location selection" screen (WRITTEN BY NICK TROCCOLI)
+    // show the "Location selection" screen
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        uploadImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        chosenImage = info[UIImagePickerControllerEditedImage] as? UIImage
         dismissViewControllerAnimated(true, completion: { () -> Void in
             
             // self.performSegueWithIdentifier("addCaptionSegue", sender: self) // segue to CaptionViewController
             
             // then add below code to a protocol implementation for the CaptionViewController's protocol
             
-            let imageData = UIImageJPEGRepresentation(self.uploadImage, 100)
+            let imageData = UIImageJPEGRepresentation(self.chosenImage, 100)
             let imageFile = PFFile(name: "image.jpeg", data: imageData)
             
             var photo = PFObject(className:"Photo")
@@ -166,13 +123,15 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+
+    /*
     // MARK: - Navigation
-    
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var vc = segue.destinationViewController as! PhotoDetailsViewController
-        var indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-        vc.selectedPhoto = photos[indexPath.section] as! NSMutableDictionary
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }

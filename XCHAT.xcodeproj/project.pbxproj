@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		251317541B0ADF4500879526 /* ReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317531B0ADF4500879526 /* ReelViewController.swift */; };
-		251317591B0B12F900879526 /* ReelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317581B0B12F900879526 /* ReelCell.swift */; };
+		251317541B0ADF4500879526 /* ReelGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317531B0ADF4500879526 /* ReelGridViewController.swift */; };
+		251317591B0B12F900879526 /* ReelGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251317581B0B12F900879526 /* ReelGridCell.swift */; };
+		25237E2D1B0C445E00959D44 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25237E2C1B0C445E00959D44 /* PhotoCell.swift */; };
+		25237E2F1B0C457E00959D44 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25237E2E1B0C457E00959D44 /* PhotoDetailsViewController.swift */; };
 		255774D51B0585FC0042FAED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255774D41B0585FC0042FAED /* ProfileViewController.swift */; };
 		257A6B721B056D5B00996A56 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257A6B711B056D5B00996A56 /* HamburgerViewController.swift */; };
 		259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA421B02F5A5006F1650 /* AppDelegate.swift */; };
@@ -18,6 +20,7 @@
 		259FBA591B02F5A6006F1650 /* XCHATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA581B02F5A6006F1650 /* XCHATTests.swift */; };
 		25F016061B045882004D78F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016051B045882004D78F6 /* LoginViewController.swift */; };
 		25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016091B045D83004D78F6 /* MenuViewController.swift */; };
+		25F2313F1B0C3DF90074F02F /* ReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F2313E1B0C3DF90074F02F /* ReelViewController.swift */; };
 		C34480519D95217D6EDDF5B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8469C60EDB32747ACDDA74A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		251317531B0ADF4500879526 /* ReelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelViewController.swift; sourceTree = "<group>"; };
-		251317581B0B12F900879526 /* ReelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelCell.swift; sourceTree = "<group>"; };
+		251317531B0ADF4500879526 /* ReelGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelGridViewController.swift; sourceTree = "<group>"; };
+		251317581B0B12F900879526 /* ReelGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelGridCell.swift; sourceTree = "<group>"; };
+		25237E2C1B0C445E00959D44 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		25237E2E1B0C457E00959D44 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		255774D41B0585FC0042FAED /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		257A6B711B056D5B00996A56 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		259FBA3D1B02F5A5006F1650 /* XCHAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCHAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +53,7 @@
 		25F015FF1B04535C004D78F6 /* XCHAT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCHAT-Bridging-Header.h"; sourceTree = "<group>"; };
 		25F016051B045882004D78F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		25F016091B045D83004D78F6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		25F2313E1B0C3DF90074F02F /* ReelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelViewController.swift; sourceTree = "<group>"; };
 		41AC825493FB88C3AB135351 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		626B855E3CA083849FA3E870 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A8469C60EDB32747ACDDA74A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,8 +81,11 @@
 		251317551B0B0EA800879526 /* Reel */ = {
 			isa = PBXGroup;
 			children = (
-				251317531B0ADF4500879526 /* ReelViewController.swift */,
-				251317581B0B12F900879526 /* ReelCell.swift */,
+				25F2313E1B0C3DF90074F02F /* ReelViewController.swift */,
+				25237E2C1B0C445E00959D44 /* PhotoCell.swift */,
+				25237E2E1B0C457E00959D44 /* PhotoDetailsViewController.swift */,
+				251317531B0ADF4500879526 /* ReelGridViewController.swift */,
+				251317581B0B12F900879526 /* ReelGridCell.swift */,
 			);
 			name = Reel;
 			sourceTree = "<group>";
@@ -305,12 +314,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				257A6B721B056D5B00996A56 /* HamburgerViewController.swift in Sources */,
+				25237E2D1B0C445E00959D44 /* PhotoCell.swift in Sources */,
 				25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */,
 				25F016061B045882004D78F6 /* LoginViewController.swift in Sources */,
 				255774D51B0585FC0042FAED /* ProfileViewController.swift in Sources */,
-				251317591B0B12F900879526 /* ReelCell.swift in Sources */,
-				251317541B0ADF4500879526 /* ReelViewController.swift in Sources */,
+				251317591B0B12F900879526 /* ReelGridCell.swift in Sources */,
+				25237E2F1B0C457E00959D44 /* PhotoDetailsViewController.swift in Sources */,
+				251317541B0ADF4500879526 /* ReelGridViewController.swift in Sources */,
 				259FBA431B02F5A5006F1650 /* AppDelegate.swift in Sources */,
+				25F2313F1B0C3DF90074F02F /* ReelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
