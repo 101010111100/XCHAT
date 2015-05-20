@@ -16,6 +16,9 @@
 		259FBA591B02F5A6006F1650 /* XCHATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259FBA581B02F5A6006F1650 /* XCHATTests.swift */; };
 		25F016061B045882004D78F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016051B045882004D78F6 /* LoginViewController.swift */; };
 		25F0160A1B045D83004D78F6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F016091B045D83004D78F6 /* MenuViewController.swift */; };
+		381125AD1B0C1CD200DBBAD2 /* ReelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381125AC1B0C1CD200DBBAD2 /* ReelViewController.swift */; };
+		381125AF1B0C1CEC00DBBAD2 /* ReelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381125AE1B0C1CEC00DBBAD2 /* ReelCell.swift */; };
+		381125B31B0C1DB400DBBAD2 /* Reel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381125B21B0C1DB400DBBAD2 /* Reel.storyboard */; };
 		384F22F21B0AE0F800A04081 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */; };
 		384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */; };
 		384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F22F51B0AE15E00A04081 /* MessageViewController.swift */; };
@@ -73,6 +76,9 @@
 		259FBA581B02F5A6006F1650 /* XCHATTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCHATTests.swift; sourceTree = "<group>"; };
 		25F016051B045882004D78F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		25F016091B045D83004D78F6 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		381125AC1B0C1CD200DBBAD2 /* ReelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelViewController.swift; sourceTree = "<group>"; };
+		381125AE1B0C1CEC00DBBAD2 /* ReelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelCell.swift; sourceTree = "<group>"; };
+		381125B21B0C1DB400DBBAD2 /* Reel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reel.storyboard; sourceTree = "<group>"; };
 		384F22F11B0AE0F800A04081 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
 		384F22F31B0AE13A00A04081 /* ThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadTableViewCell.swift; sourceTree = "<group>"; };
 		384F22F51B0AE15E00A04081 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 		259FBA3F1B02F5A5006F1650 /* XCHAT */ = {
 			isa = PBXGroup;
 			children = (
+				381125AB1B0C1CB700DBBAD2 /* Reel */,
 				3890A1CB1B0B17B900B4FF00 /* Events */,
 				384F23011B0AE90C00A04081 /* Menu */,
 				384F22F01B0AE0D500A04081 /* Threads */,
@@ -211,6 +218,16 @@
 			children = (
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		381125AB1B0C1CB700DBBAD2 /* Reel */ = {
+			isa = PBXGroup;
+			children = (
+				381125AC1B0C1CD200DBBAD2 /* ReelViewController.swift */,
+				381125AE1B0C1CEC00DBBAD2 /* ReelCell.swift */,
+				381125B21B0C1DB400DBBAD2 /* Reel.storyboard */,
+			);
+			name = Reel;
 			sourceTree = "<group>";
 		};
 		384F22EF1B0AE08A00A04081 /* Notifications */ = {
@@ -378,6 +395,7 @@
 				3887E9EE1B04365E00D16CF6 /* Credentials.plist in Resources */,
 				259FBA4D1B02F5A6006F1650 /* LaunchScreen.xib in Resources */,
 				387866101B0478C400623BC1 /* NotificationSettings.storyboard in Resources */,
+				381125B31B0C1DB400DBBAD2 /* Reel.storyboard in Resources */,
 				259FBA4A1B02F5A6006F1650 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,9 +456,11 @@
 				3890A1CD1B0B17D000B4FF00 /* EventViewController.swift in Sources */,
 				3878660E1B0475B500623BC1 /* PushHelper.swift in Sources */,
 				3890A1CF1B0B17EB00B4FF00 /* EventViewCell.swift in Sources */,
+				381125AD1B0C1CD200DBBAD2 /* ReelViewController.swift in Sources */,
 				384F22F41B0AE13A00A04081 /* ThreadTableViewCell.swift in Sources */,
 				384F22F81B0AE17900A04081 /* MessageTableViewCell.swift in Sources */,
 				384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */,
+				381125AF1B0C1CEC00DBBAD2 /* ReelCell.swift in Sources */,
 				387866141B047A2100623BC1 /* NotificationsTableViewCell.swift in Sources */,
 				387866161B04829200623BC1 /* MainViewController.swift in Sources */,
 				387866181B0488B700623BC1 /* NotificationSettingConstants.swift in Sources */,
