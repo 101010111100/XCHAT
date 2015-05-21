@@ -32,7 +32,7 @@ class NewThreadViewController: UIViewController {
         query.orderByDescending("groupId")
         query.limit = 1
         let object = query.getFirstObject()!
-        return object["groupId"] as Int
+        return object["groupId"] as! Int
     }
     
     @IBAction func cancelAction(sender: AnyObject) {

@@ -70,7 +70,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if objects != nil {
                 println(objects)
-                self.messages = objects as [PFObject]
+                self.messages = objects as! [PFObject]
                 self.messageTableView.reloadData()
             } else {
                 println("object is nil")
@@ -80,7 +80,7 @@ class MessageViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("MessageTableViewCell", forIndexPath: indexPath) as MessageTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("MessageTableViewCell", forIndexPath: indexPath) as! MessageTableViewCell
         
         let messageForRow = messages[indexPath.row] as PFObject
         cell.messageLabel.text = messageForRow["content"] as? String

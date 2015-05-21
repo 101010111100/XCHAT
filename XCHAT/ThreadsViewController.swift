@@ -56,7 +56,7 @@ class ThreadsViewController: UIViewController, UITableViewDataSource, UITableVie
         query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if objects != nil {
                 println(objects)
-                self.threads = objects as [PFObject]
+                self.threads = objects as! [PFObject]
                 self.threadsTableView.reloadData()
             } else {
                 println("object is nil")
@@ -66,7 +66,7 @@ class ThreadsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("ThreadTableViewCell", forIndexPath: indexPath) as ThreadTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("ThreadTableViewCell", forIndexPath: indexPath)as! ThreadTableViewCell
         
         let threadForRow = threads[indexPath.row] as PFObject
         cell.threadNameLabel.text = threadForRow["threadName"] as? String
@@ -92,8 +92,8 @@ class ThreadsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "readThreadSegue" {
-            let senderCell = sender as UITableViewCell
-            let messageVC = segue.destinationViewController as MessageViewController
+            let senderCell = sender as! UITableViewCell
+            let messageVC = segue.destinationViewController as! MessageViewController
             let senderIndexPath = threadsTableView.indexPathForCell(senderCell)
             
             // Tell MessageViewController the objectId of the thread to load

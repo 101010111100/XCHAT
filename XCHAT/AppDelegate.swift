@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // ** SETS START VIEW **
             hamburgerViewController = storyboard.instantiateViewControllerWithIdentifier("HamburgerViewController") as? HamburgerViewController
             
-            var menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as MenuViewController
-            var profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as ProfileViewController
+            var menuViewController = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+            var profileViewController = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             hamburgerViewController!.menuViewController = menuViewController
             menuViewController.hamburgerViewController = hamburgerViewController
@@ -47,13 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // does exactly the same as arrow in storyboard   ("100% parity" --Tim Lee)
             window?.rootViewController = hamburgerViewController
         // }
+        
+        
 
-        if let path=NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
-            var myDict = NSDictionary(contentsOfFile: path)
-            let appId = myDict!.valueForKey("appId") as NSString
-            let clientKey = myDict!.valueForKey("clientKey") as NSString
-            Parse.setApplicationId(appId,
-                clientKey: clientKey)
+        //if let path=NSBundle.mainBundle().pathForResource("Credentials", ofType: "plist") {
+            //var myDict = NSDictionary(contentsOfFile: path)
+            //let appId = myDict!.valueForKey("appId") as! NSString
+            //let clientKey = myDict!.valueForKey("clientKey")as! NSString
+            let appId = "cEpg8HAH75eVLcqfp9VfbQIdUJ1lz7XVMwrZ5EYc"
+            let clientKey = "Ldbj47H9IXlzbIKkW1W7DkK2YvbeAfdCTVyregTL"
+            Parse.setApplicationId(appId as String,
+                clientKey: clientKey as String)
             
             // Register for Push Notitications
             if application.applicationState != UIApplicationState.Background {
@@ -81,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
                 application.registerForRemoteNotificationTypes(types)
             }
-        }
+       // }
         return true
     }
     
@@ -89,11 +93,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
         //there's no empty saveInBackground method
-        installation.saveInBackgroundWithBlock({ (success: Bool, error: NSError!) -> Void in
-            //nothing here for callback
-        })
-
+        installation.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+                       //nothing here for callback
+        }
     }
+    
+            
+   
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         if error.code == 3010 {
@@ -101,13 +107,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
         }
+        
     }
+
+        
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
         if application.applicationState == UIApplicationState.Inactive {
-            PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(userInfo, block: { (success: Bool, error: NSError!) -> Void in
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(userInfo, block: { (success:Bool, error:NSError?) -> Void in
                 //nothing here for callback
+
             })
         }
     }

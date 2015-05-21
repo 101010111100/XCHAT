@@ -35,22 +35,22 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            var cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as! UITableViewCell
             return cell
         case 1:
-            var cell = tableView.dequeueReusableCellWithIdentifier("ThreadsCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("ThreadsCell") as! UITableViewCell
             return cell
         case 2:
-            var cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell")as! UITableViewCell
             return cell
         case 3:
-            var cell = tableView.dequeueReusableCellWithIdentifier("ReelCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("ReelCell")as! UITableViewCell
             return cell
         case 4:
-            var cell = tableView.dequeueReusableCellWithIdentifier("MembersCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("MembersCell") as! UITableViewCell
             return cell
         default:
-            var cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as! UITableViewCell
             return cell
         }
     }
@@ -67,6 +67,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch indexPath.row {
         case 1:
             var threadsStoryboard = UIStoryboard(name: "Threads", bundle: nil)
+<<<<<<< HEAD
             var chatNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as UINavigationController
             hamburgerViewController?.contentViewController = chatNavigationController
             //threads
@@ -77,17 +78,35 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             //calendar
         case 3:
             1
+=======
+            var chatNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = chatNavigationController
+            //threads
+        case 2:
+            var eventsStoryboard = UIStoryboard(name: "Events", bundle: nil)
+            var eventsNavigationController = eventsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = eventsNavigationController
+            //calendar
+        case 3:
+            var reelStoryboard = UIStoryboard(name: "Reel", bundle: nil)
+            var reelNavigationController = reelStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = reelNavigationController
+>>>>>>> origin/master
             //reel
         case 4:
             1
             //members
         case 5:
             var threadsStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
+<<<<<<< HEAD
             var notificationSettingsController = threadsStoryboard.instantiateViewControllerWithIdentifier("Settings") as NotificationsSettingsViewController
+=======
+            var notificationSettingsController = threadsStoryboard.instantiateViewControllerWithIdentifier("Settings") as! NotificationsSettingsViewController
+>>>>>>> origin/master
             hamburgerViewController?.contentViewController = notificationSettingsController
             //settings
         default:
-            var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as ProfileViewController
+            var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             // SETUP PROFILE
             
