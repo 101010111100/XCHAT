@@ -8,6 +8,13 @@
 
 import UIKit
 
+// WHERE TO START
+// - implement caption screen after photo selection (look at PhotoMap)
+// - have cells set themselves up
+// - add button functionality
+//      - save fave
+//      - add comment funcitonality (could be mimic of caption view)
+
 class ReelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var photos = NSMutableArray()
@@ -182,6 +189,8 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
             var photo = PFObject(className:"Photo")
             photo["imageName"] = "Dis a picture!" // SET TO CAPTION NAME
             photo["imageFile"] = imageFile
+            photo["numFaves"] = 0
+            photo["numComments"] = 0
             photo.saveInBackgroundWithBlock(nil)
             
         })
