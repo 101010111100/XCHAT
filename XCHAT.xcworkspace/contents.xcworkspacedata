@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Hamburger.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:XCHAT.xcodeproj">
    </FileRef>
    <FileRef

@@ -28,7 +28,6 @@
 		387866101B0478C400623BC1 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */; };
 		387866121B0479D100623BC1 /* NotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */; };
 		387866141B047A2100623BC1 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866131B047A2100623BC1 /* NotificationsTableViewCell.swift */; };
-		387866161B04829200623BC1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866151B04829200623BC1 /* MainViewController.swift */; };
 		387866181B0488B700623BC1 /* NotificationSettingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387866171B0488B700623BC1 /* NotificationSettingConstants.swift */; };
 		3887E9F01B043AB900D16CF6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887E9EF1B043AB900D16CF6 /* AudioToolbox.framework */; };
 		3887E9F21B043ABE00D16CF6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887E9F11B043ABE00D16CF6 /* CFNetwork.framework */; };
@@ -90,7 +89,6 @@
 		3878660F1B0478C400623BC1 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		387866111B0479D100623BC1 /* NotificationsSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsSettingsViewController.swift; sourceTree = "<group>"; };
 		387866131B047A2100623BC1 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
-		387866151B04829200623BC1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		387866171B0488B700623BC1 /* NotificationSettingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingConstants.swift; sourceTree = "<group>"; };
 		3887E9EF1B043AB900D16CF6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3887E9F11B043ABE00D16CF6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -179,10 +177,8 @@
 				384F23011B0AE90C00A04081 /* Menu */,
 				384F22F01B0AE0D500A04081 /* Threads */,
 				384F22EF1B0AE08A00A04081 /* Notifications */,
-				259FBA641B02F62C006F1650 /* View Controllers */,
 				259FBA421B02F5A5006F1650 /* AppDelegate.swift */,
 				259FBA461B02F5A5006F1650 /* Main.storyboard */,
-				387866151B04829200623BC1 /* MainViewController.swift */,
 				259FBA491B02F5A6006F1650 /* Images.xcassets */,
 				259FBA4B1B02F5A6006F1650 /* LaunchScreen.xib */,
 				259FBA401B02F5A5006F1650 /* Supporting Files */,
@@ -214,13 +210,6 @@
 				259FBA571B02F5A6006F1650 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		259FBA641B02F62C006F1650 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		381125AB1B0C1CB700DBBAD2 /* Reel */ = {
@@ -469,7 +458,6 @@
 				384F22F61B0AE15E00A04081 /* MessageViewController.swift in Sources */,
 				387866141B047A2100623BC1 /* NotificationsTableViewCell.swift in Sources */,
 				38F655DF1B0D233400C5586A /* PhotoDetailsViewController.swift in Sources */,
-				387866161B04829200623BC1 /* MainViewController.swift in Sources */,
 				387866181B0488B700623BC1 /* NotificationSettingConstants.swift in Sources */,
 				38F655DD1B0D231B00C5586A /* PhotoCell.swift in Sources */,
 				384F22FA1B0AE18D00A04081 /* NewThreadViewController.swift in Sources */,

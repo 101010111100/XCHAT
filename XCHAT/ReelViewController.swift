@@ -40,6 +40,7 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    
     // MARK: Refresh
     
     func refreshData() {
@@ -48,13 +49,15 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil {
-                // The find succeeded.
+                
                 println("Successfully retrieved \(objects!.count) photos.")
                 
-                // Do something with the found objects
                 if let objects = objects as? [PFObject] {
+                    self.photos.removeAllObjects()
+                    
                     println("Adding photos to array")
                     var i = 0
+                    
                     for object in objects {
                         var photo = NSMutableDictionary()
                         
@@ -63,7 +66,9 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                         if let imageFile = object.objectForKey("imageFile") as? PFFile {
                             photo.setObject(imageFile, forKey: "imageFile")
+                            
                             println("\(i++)")
+                            
                         }
                         photo.setObject(object.objectId!, forKey: "objectId")
                         self.photos.addObject(photo)
@@ -81,6 +86,7 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshData()
         refreshControl.endRefreshing()
     }
+    
     
     // MARK: TableView
     
@@ -102,15 +108,9 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         return CGFloat(self.headerHeight)
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
-        // var photo = self.photos[indexPath.section] as NSDictionary
-        // var url = photo.valueForKeyPath("images.standard_resolution.url") as? String
-        
-        
-        // cell.photoView.setImageWithURL(NSURL(string: url!)!)
-        var photo = photos.objectAtIndex(indexPath.row) as? NSMutableDictionary
+        var photo = photos.objectAtIndex(indexPath.section) as? NSMutableDictionary
         cell.setUpCell(photo)
         
         return cell
@@ -128,6 +128,7 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         return photos.count
     }
     
+    
     // MARK: Actions
     
     @IBAction func onAddButtonTapped(sender: AnyObject) {
@@ -138,13 +139,14 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         presentViewController(imageVC, animated: true, completion: nil) // FIXME: Causes warning 'Presenting view controllers on detached view controllers is discouraged'
     }
     
+    
     // MARK: ImagePickerController
     
-    // Triggered when the user finishes taking an image.  Saves the chosen image
-    // to our temporary chosenImage variable, and dismisses the
-    // image picker view controller.  Once the image picker view controller is
-    // dismissed (a.k.a. inside the completion handler) we modally segue to
-    // show the "Location selection" screen (WRITTEN BY NICK TROCCOLI)
+    // Triggered when the user finishes taking an image. Saves the chosen image to our temporary
+    // uploadImage variable, and dismisses the image picker view controller. Once the image picker
+    // view controller is dismissed (a.k.a. inside the completion handler) we modally segue to
+    // show the "Location selection" screen. --Nick Troccoli
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         uploadImage = info[UIImagePickerControllerEditedImage] as? UIImage
         dismissViewControllerAnimated(true, completion: { () -> Void in
@@ -157,7 +159,7 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
             let imageFile = PFFile(name: "image.jpeg", data: imageData)
             
             var photo = PFObject(className:"Photo")
-            photo["imageName"] = "Dis a picture!" // set to caption name
+            photo["imageName"] = "Dis a picture!" // SET TO CAPTION NAME
             photo["imageFile"] = imageFile
             photo.saveInBackgroundWithBlock(nil)
             
@@ -166,7 +168,8 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    // MARK: - Navigation
+    
+    // MARK: Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
