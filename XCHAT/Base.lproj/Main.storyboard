@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CIv-GW-ohH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CIv-GW-ohH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -255,10 +255,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NIj-Wc-AHV" id="bJA-yF-vqF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THREADS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOB-lZ-YPp">
-                                                    <rect key="frame" x="14" y="5" width="120" height="34"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHAT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOB-lZ-YPp">
+                                                    <rect key="frame" x="14" y="5" width="68" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="7FQ-f8-mic"/>
+                                                        <constraint firstAttribute="width" constant="68" id="7FQ-f8-mic"/>
                                                         <constraint firstAttribute="height" constant="34" id="Xth-hy-DQc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
@@ -272,30 +272,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="OOB-lZ-YPp" secondAttribute="bottom" constant="4" id="U5g-H0-fIH"/>
                                                 <constraint firstItem="OOB-lZ-YPp" firstAttribute="leading" secondItem="bJA-yF-vqF" secondAttribute="leading" constant="14" id="kp2-oa-V5U"/>
                                                 <constraint firstItem="OOB-lZ-YPp" firstAttribute="top" secondItem="bJA-yF-vqF" secondAttribute="top" constant="5" id="qdL-O6-Nqv"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" id="fbb-t1-D4S">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbb-t1-D4S" id="K0Z-QM-DQh">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk3-wr-VK6">
-                                                    <rect key="frame" x="14" y="5" width="137" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="137" id="RAj-oo-MzQ"/>
-                                                        <constraint firstAttribute="height" constant="34" id="ZJs-es-Gyk"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Jk3-wr-VK6" firstAttribute="top" secondItem="K0Z-QM-DQh" secondAttribute="top" constant="5" id="DS4-Ha-wke"/>
-                                                <constraint firstItem="Jk3-wr-VK6" firstAttribute="leading" secondItem="K0Z-QM-DQh" secondAttribute="leading" constant="14" id="Q4j-uv-a8H"/>
-                                                <constraint firstAttribute="bottom" secondItem="Jk3-wr-VK6" secondAttribute="bottom" constant="4" id="vzy-8X-rDb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -321,6 +297,30 @@
                                                 <constraint firstItem="Wp8-ea-S98" firstAttribute="leading" secondItem="lR5-Hv-D54" secondAttribute="leading" constant="15" id="hWG-dJ-Cbl"/>
                                                 <constraint firstAttribute="bottom" secondItem="Wp8-ea-S98" secondAttribute="bottom" constant="4" id="pVu-5q-8XL"/>
                                                 <constraint firstItem="Wp8-ea-S98" firstAttribute="top" secondItem="lR5-Hv-D54" secondAttribute="top" constant="5" id="vSu-Op-K4v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" id="fbb-t1-D4S">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbb-t1-D4S" id="K0Z-QM-DQh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALENDAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk3-wr-VK6">
+                                                    <rect key="frame" x="14" y="5" width="137" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="137" id="RAj-oo-MzQ"/>
+                                                        <constraint firstAttribute="height" constant="34" id="ZJs-es-Gyk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jk3-wr-VK6" firstAttribute="top" secondItem="K0Z-QM-DQh" secondAttribute="top" constant="5" id="DS4-Ha-wke"/>
+                                                <constraint firstItem="Jk3-wr-VK6" firstAttribute="leading" secondItem="K0Z-QM-DQh" secondAttribute="leading" constant="14" id="Q4j-uv-a8H"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jk3-wr-VK6" secondAttribute="bottom" constant="4" id="vzy-8X-rDb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

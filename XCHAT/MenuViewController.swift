@@ -41,10 +41,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             var cell = tableView.dequeueReusableCellWithIdentifier("ThreadsCell") as! UITableViewCell
             return cell
         case 2:
-            var cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell")as! UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("ReelCell")as! UITableViewCell
             return cell
         case 3:
-            var cell = tableView.dequeueReusableCellWithIdentifier("ReelCell")as! UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("CalendarCell")as! UITableViewCell
             return cell
         case 4:
             var cell = tableView.dequeueReusableCellWithIdentifier("MembersCell") as! UITableViewCell
@@ -55,49 +55,40 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
     }
-    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         print(indexPath.row)
         switch indexPath.row {
-        case 1:
-            var threadsStoryboard = UIStoryboard(name: "Threads", bundle: nil)
-            var chatNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
-            hamburgerViewController?.contentViewController = chatNavigationController
-            //threads
-        case 2:
-            var eventsStoryboard = UIStoryboard(name: "Events", bundle: nil)
-            var eventsNavigationController = eventsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
-            hamburgerViewController?.contentViewController = eventsNavigationController
-            //calendar
-        case 3:
-            var reelStoryboard = UIStoryboard(name: "Reel", bundle: nil)
-            var reelNavigationController = reelStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
-            hamburgerViewController?.contentViewController = reelNavigationController
-            //reel
-        case 4:
-            1
-            //members
-        case 5:
-            var threadsStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
-            var notificationSettingsController = threadsStoryboard.instantiateViewControllerWithIdentifier("Settings") as! NotificationsSettingsViewController
-            hamburgerViewController?.contentViewController = notificationSettingsController
-            //settings
-        default:
+        case 0: // PROFILE
             var profileViewController = storyboard!.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             
             // SETUP PROFILE
             
             hamburgerViewController?.contentViewController = profileViewController
-//        default:
-//            var chatNavigationController = storyboard!.instantiateViewControllerWithIdentifier("ChatNavigationController") as! UINavigationController
-//            var chatViewController = chatNavigationController.viewControllers[0] as! ChatViewController
-//            hamburgerViewController?.contentViewController = chatNavigationController
+        case 1: // CHAT
+            var threadsStoryboard = UIStoryboard(name: "Threads", bundle: nil)
+            var chatNavigationController = threadsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = chatNavigationController
+        case 2: // REEL
+            var reelStoryboard = UIStoryboard(name: "Reel", bundle: nil)
+            var reelNavigationController = reelStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = reelNavigationController
+        case 3: // CALENDAR
+            var eventsStoryboard = UIStoryboard(name: "Events", bundle: nil)
+            var eventsNavigationController = eventsStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = eventsNavigationController
+        case 4: // MEMBERS
+            var reelStoryboard = UIStoryboard(name: "Reel", bundle: nil)
+            var reelNavigationController = reelStoryboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+            hamburgerViewController?.contentViewController = reelNavigationController
+        default: // SETTINGS
+            var threadsStoryboard = UIStoryboard(name: "NotificationSettings", bundle: nil)
+            var notificationSettingsController = threadsStoryboard.instantiateViewControllerWithIdentifier("Settings") as! NotificationsSettingsViewController
+            hamburgerViewController?.contentViewController = notificationSettingsController
         }
     }
     

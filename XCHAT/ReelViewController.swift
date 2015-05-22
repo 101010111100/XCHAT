@@ -28,7 +28,8 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 320
+        self.tableView.estimatedRowHeight = 44.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
@@ -60,22 +61,20 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     for object in objects {
                         var photo = NSMutableDictionary()
+                        photo.setObject((object.objectForKey("imageName") as? String)!, forKey: "imageName")
+                        photo.setObject(object.objectForKey("imageFile")!, forKey: "imageFile")
                         
-                        if let imageName = object.objectForKey("imageName") as? String {
-                            photo.setObject(object.objectForKey("imageName")!, forKey: "imageName")
-                        }
-                        if let imageFile = object.objectForKey("imageFile") as? PFFile {
-                            photo.setObject(imageFile, forKey: "imageFile")
-                            
-                            println("\(i++)")
-                            
-                        }
+                        println("\(i++)")
+                        
                         photo.setObject(object.objectId!, forKey: "objectId")
-                        self.photos.addObject(photo)
+                        self.photos.insertObject(photo, atIndex: 0)
                     }
                 }
+                
                 self.tableView.reloadData()
+                
             } else {
+                
                 // Log details of the failure
                 println("Error: \(error!) \(error!.userInfo!)")
             }
@@ -109,15 +108,37 @@ class ReelViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
-        var photo = photos.objectAtIndex(indexPath.section) as? NSMutableDictionary
-        cell.setUpCell(photo)
-        
-        return cell
+        switch indexPath.row {
+        case 0:
+            var cell = tableView.dequeueReusableCellWithIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
+            var photo = photos.objectAtIndex(indexPath.section) as? NSMutableDictionary
+            cell.setUpCell(photo)
+            return cell
+        case 1:
+            var cell = tableView.dequeueReusableCellWithIdentifier("ButtonCell", forIndexPath: indexPath) as! ButtonCell
+            
+            // CONFIGURE WHETHER LIKED OR NOT
+            
+            return cell
+        case 2:
+            // if faves greater than zero, else do nothing
+            
+            var cell = tableView.dequeueReusableCellWithIdentifier("FavesCell", forIndexPath: indexPath) as! FavesCell
+            
+            // SET NUM FAVES
+            
+            return cell
+        default:
+            var cell = tableView.dequeueReusableCellWithIdentifier("CommentCell", forIndexPath: indexPath) as! CommentCell
+            
+            // SETUP
+            
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
